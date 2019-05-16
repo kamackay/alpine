@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:latest
 
 RUN apk update && \
     apk add \
@@ -12,8 +12,10 @@ RUN apk update && \
         bash \
         sudo \
         grep \
+        yarn \
         maven \
-        gnupg \ 
+        gnupg \
+        nginx \
         gradle \
         python \
         nodejs \
@@ -24,12 +26,12 @@ RUN apk update && \
         linux-headers \
         binutils-gold
 
-RUN npm i --ignore-optional -g \
+RUN yarn global add \
     sass \
     less \
-    yarn \ 
     serve \
     webpack \
     prettier \
     typescript \
+    browserify \
     webpack-cli
