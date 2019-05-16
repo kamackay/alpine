@@ -17,11 +17,11 @@ RUN apk update && \
         gnupg \
         nginx \
         gradle \
-        python \
         nodejs \
+        python3 \
         openjdk8 \
-        nodejs-npm \
         libstdc++ \
+        nodejs-npm \
         supervisor \
         linux-headers \
         binutils-gold
