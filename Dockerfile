@@ -18,6 +18,7 @@ RUN apk update && \
         nginx \
         gradle \
         nodejs \
+        openssl \
         python3 \
         openjdk8 \
         libstdc++ \
