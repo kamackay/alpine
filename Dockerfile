@@ -35,4 +35,5 @@ RUN yarn global add \
     prettier \
     typescript \
     browserify \
-    webpack-cli
+    webpack-cli \
+    concurrently
