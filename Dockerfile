@@ -1,16 +1,13 @@
 FROM alpine:latest
 
-RUN apk update && \
-    apk add \
+RUN apk add --update \
         go \
         gcc \
         g++ \
         git \
-        curl \
         gzip \
         make \
         bash \
-        sudo \
         grep \
         yarn \
         maven \
@@ -25,7 +22,8 @@ RUN apk update && \
         nodejs-npm \
         supervisor \
         linux-headers \
-        binutils-gold
+        binutils-gold && \
+		rm -rf /var/cache/apk/*
 
 RUN yarn global add \
     sass \
