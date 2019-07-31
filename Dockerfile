@@ -29,6 +29,7 @@ RUN yarn global add \
     sass \
     less \
     serve \
+    forever \
     webpack \
     prettier \
     typescript \
