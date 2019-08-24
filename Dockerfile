@@ -14,6 +14,7 @@ RUN apk update && apk upgrade && apk add \
         yarn \
         gnupg \
         nginx \
+        gradle \
         nodejs \
         openssl \
         python3 \
@@ -26,8 +27,7 @@ RUN apk update && apk upgrade && apk add \
         curl -s "https://get.sdkman.io" | bash && \
         source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-RUN sdk install maven && \
-    sdk install gradle
+RUN sdk install maven
 
 RUN yarn global add \
     sass \
