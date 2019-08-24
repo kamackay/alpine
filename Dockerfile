@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk update && apk upgrade && apk add \
+RUN apk update && apk upgrade && apk add --no-cache \
         go \
         gcc \
         g++ \
@@ -12,6 +12,7 @@ RUN apk update && apk upgrade && apk add \
         bash \
         grep \
         yarn \
+        maven \
         gnupg \
         nginx \
         gradle \
@@ -24,10 +25,7 @@ RUN apk update && apk upgrade && apk add \
         linux-headers \
         binutils-gold && \
 		rm -rf /var/cache/apk/* && \
-        curl -s "https://get.sdkman.io" | bash && \
-        source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-RUN sdk install maven
+        curl -s "https://get.sdkman.io" | bash
 
 RUN yarn global add \
     sass \
