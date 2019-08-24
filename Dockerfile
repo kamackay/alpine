@@ -5,25 +5,29 @@ RUN apk update && apk upgrade && apk add \
         gcc \
         g++ \
         git \
+        zip \
+        curl \
         gzip \
         make \
         bash \
         grep \
         yarn \
-        maven \
         gnupg \
         nginx \
-        gradle \
         nodejs \
         openssl \
         python3 \
-        openjdk8 \
         libstdc++ \
         nodejs-npm \
         supervisor \
         linux-headers \
         binutils-gold && \
-		rm -rf /var/cache/apk/*
+		rm -rf /var/cache/apk/* && \
+        curl -s "https://get.sdkman.io" | bash && \
+        source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+RUN sdk install maven && \
+    sdk install gradle
 
 RUN yarn global add \
     sass \
