@@ -1,5 +1,7 @@
 FROM node:alpine
 
-# WORKDIR /etc/www/
+WORKDIR /etc/www/
 
-RUN npm i -g serve
+RUN apk update && apk upgrade && \
+    npm i -g serve && \
+    rm -rf /var/cache/apk/*
