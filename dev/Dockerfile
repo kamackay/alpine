@@ -1,12 +1,10 @@
 FROM alpine:latest
 
-RUN apk update && apk upgrade && apk add --no-cache \
+RUN apk update && apk upgrade && apk add \
         go \
         gcc \
         g++ \
         git \
-        zip \
-        curl \
         gzip \
         make \
         bash \
@@ -19,12 +17,13 @@ RUN apk update && apk upgrade && apk add --no-cache \
         nodejs \
         openssl \
         python3 \
+        openjdk8 \
         libstdc++ \
         nodejs-npm \
         supervisor \
         linux-headers \
         binutils-gold && \
-    rm -rf /var/cache/apk/*
+		rm -rf /var/cache/apk/*
 
 RUN yarn global add \
     sass \
