@@ -23,7 +23,7 @@ RUN apk update && apk upgrade && apk add \
         supervisor \
         linux-headers \
         binutils-gold && \
-		rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/*
 
 RUN yarn global add \
     sass \
