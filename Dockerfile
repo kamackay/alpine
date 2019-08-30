@@ -38,4 +38,7 @@ RUN apk upgrade --update --no-cache && apk add --no-cache \
         concurrently && \
     rm -rf /tmp && \
     rm -rf /home && \
+    rm -rf /run && \
+    rm -rf /opt && \
+    rm -rf /root && \
     rm -rf /usr/local/share/.cache
