@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk update && apk upgrade && apk add --no-cache \
+RUN apk upgrade --update --no-cache && apk add --no-cache \
         go \
         gcc \
         g++ \
@@ -23,17 +23,18 @@ RUN apk update && apk upgrade && apk add --no-cache \
         nodejs-npm \
         supervisor \
         linux-headers \
-        binutils-gold && \
-    rm -rf /var/cache/apk/*
-
-RUN yarn global add \
-    sass \
-    less \
-    serve \
-    forever \
-    webpack \
-    prettier \
-    typescript \
-    browserify \
-    webpack-cli \
-    concurrently
+        binutils-gold \
+        ca-certificates && \
+    update-ca-certificates && \
+    rm -rf /var/cache/apk/* && \
+    yarn global add \
+        sass \
+        less \
+        serve \
+        forever \
+        webpack \
+        prettier \
+        typescript \
+        browserify \
+        webpack-cli \
+        concurrently
