@@ -5,4 +5,4 @@ WORKDIR /etc/www/
 RUN apk update && apk upgrade && \
     npm i -g serve && \
     rm -rf /var/cache/apk/* && \
-    yarn cache clear
+    yarn cache clean
