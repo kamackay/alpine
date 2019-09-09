@@ -41,4 +41,5 @@ RUN apk upgrade --update --no-cache && apk add --no-cache \
     rm -rf /run && \
     rm -rf /opt && \
     rm -rf /root && \
-    rm -rf /usr/local/share/.cache
+    rm -rf /usr/local/share/.cache && \
+    yarn cache clear
